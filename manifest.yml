@@ -1,0 +1,18 @@
+  declared-services:
+    Investment Portfolio-oz:
+      label: fss-portfolio-service
+      plan: fss-portfolio-service-free-plan
+    Portfolio Optimization-xq:
+      label: fss-financial-optimization-service
+      plan: fss-financial-optimization-service-free-plan
+  applications:
+  - path: .
+    memory: 128M
+    instances: 1
+    name: Portfolio.Optimize
+    disk_quota: 1024M
+    domain: mybluemix.net
+    services:
+    - Investment Portfolio-oz
+    - Portfolio Optimization-xq
+    buildpack: python_buildpack
